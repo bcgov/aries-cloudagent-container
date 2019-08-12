@@ -17,14 +17,14 @@ VERSIONS = {
     },
 }
 
-DEFAULT_NAME = "hyperledger/aries-cloudagent-container"
+DEFAULT_NAME = "hyperledger/aries-cloudagent"
 PY_35_VERSION = "3.5.7"
 PY_36_VERSION = "3.6.9"
 PY_37_VERSION = "3.7.4"
 PY_DEFAULT_VERSION = PY_36_VERSION
 
 
-parser = argparse.ArgumentParser(description="Generate the aries-cloudagent-container Docker image")
+parser = argparse.ArgumentParser(description="Generate the aries-cloudagent Docker image")
 parser.add_argument(
     "-n", "--name", default=DEFAULT_NAME, help="the base name for the docker image"
 )

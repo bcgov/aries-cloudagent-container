@@ -1,0 +1,4 @@
+ARG base_image
+FROM $base_image
+COPY test test
+ENTRYPOINT ["/bin/bash", "-c", "test/validate.sh"]

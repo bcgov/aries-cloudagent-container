@@ -158,7 +158,7 @@ if args.postgres:
     )
 
 cmd_args.append(target)
-cmd = ["docker", "build"] + cmd_args
+cmd = ["docker", "build", "--rm"] + cmd_args
 
 if args.dry_run:
     print(" ".join(cmd))
@@ -185,6 +185,7 @@ if not args.dry_run:
             [
                 "docker",
                 "build",
+                "--rm",
                 "--build-arg",
                 "base_image=" + tag,
                 "-t",

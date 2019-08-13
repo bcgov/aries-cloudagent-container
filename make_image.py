@@ -7,9 +7,9 @@ import subprocess
 import sys
 
 VERSIONS = {
-    "python": {
+    "0.3.0": {
         "path": "python",
-        "version": "latest",
+        "version": "0.3.0",
         "args": {
             # 1.11.0
             "indy_sdk_url": "https://codeload.github.com/hyperledger/indy-sdk/tar.gz/a583838aad867ad3dbb142b86bd76cadfe294682"
@@ -18,7 +18,6 @@ VERSIONS = {
 }
 
 DEFAULT_NAME = "hyperledger/aries-cloudagent"
-PY_35_VERSION = "3.5.7"
 PY_36_VERSION = "3.6.9"
 PY_37_VERSION = "3.7.4"
 PY_DEFAULT_VERSION = PY_36_VERSION
@@ -46,13 +45,6 @@ parser.add_argument(
     "-o",
     "--output",
     help="output an updated Dockerfile with the build arguments replaced",
-)
-parser.add_argument(
-    "--py35",
-    dest="python",
-    action="store_const",
-    const=PY_35_VERSION,
-    help="build with the default python 3.5 version",
 )
 parser.add_argument(
     "--py36",
@@ -116,6 +108,7 @@ build_args.update(ver["args"])
 build_args["python_version"] = py_ver
 build_args["tag_name"] = tag_name
 build_args["tag_version"] = tag_version
+build_args["agent_version"] = ver.get("version", args.version)
 if not args.debug:
     build_args["indy_build_flags"] = "--release"
 if args.build_arg:

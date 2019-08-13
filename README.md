@@ -20,7 +20,7 @@ To build the image locally you will need to install:
 
 ## Running the build
 
-To run the build, open a terminal session at the root of this Git repo and execute this command: `python make_image.py python`.
+To run the build, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0`. This will build the image using version aries-cloudagent version 0.3.0.
 
 Many parameters can be specified through command-line, to know more please type `python make_image.py` and the usage will be displayed.
 

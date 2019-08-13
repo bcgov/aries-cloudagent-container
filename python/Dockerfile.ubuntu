@@ -105,6 +105,7 @@ ARG user=indy
 ARG python_version=3.5.5
 ARG tag_name=aries-cloudagent
 ARG tag_version=
+ARG agent_version=
 
 ENV HOME="/home/$user" \
     APP_ROOT="$HOME" \
@@ -199,5 +200,7 @@ RUN chown -R indy:root $HOME/.indy_client \
     && chmod -R ug+rw $HOME/log $HOME/ledger $HOME/.indy-cli $HOME/.indy_client $HOME/.cache
 
 USER $user
+
+RUN pip install aries-cloudagent==${agent_version}
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

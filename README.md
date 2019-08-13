@@ -1,6 +1,6 @@
 # Docker images for Hyperledger Aries Cloud Agent
 
-The image repository is located [on Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent-container/).
+The image repository is located [on Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/).
 
 The images include:
 
@@ -20,9 +20,9 @@ To build the image locally you will need to install:
 
 ## Running the build
 
-To run the build, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0`. This will build the image using version aries-cloudagent version 0.3.0.
+To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0`. This will build the image using version aries-cloudagent version 0.3.0.
 
-Many parameters can be specified through command-line, to know more please type `python make_image.py` and the usage will be displayed.
+Many parameters can be specified through command-line, for more information please type `python make_image.py` to display the command's usage page.
 
 # Credits
 

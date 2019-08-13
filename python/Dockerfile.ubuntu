@@ -201,6 +201,6 @@ RUN chown -R indy:root $HOME/.indy_client \
 
 USER $user
 
-RUN pip install aries-cloudagent==${agent_version}
+RUN pip install --no-cache-dir aries-cloudagent==${agent_version}
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 # Docker images for Hyperledger Aries Cloud Agent
 
 The image repository is located [on Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/).

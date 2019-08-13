@@ -8,9 +8,9 @@ import subprocess
 import sys
 
 VERSIONS = {
-    "0.3.0": [
+    "python": [
         {
-            "implementation": "python",
+            "version": "0.3.0",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.11-0"
             },
@@ -19,33 +19,35 @@ VERSIONS = {
 }
 
 
-def list_implementation_languages():
-    implementations = []
+def list_versions():
+    versions = []
 
-    for version in VERSIONS.keys():
+    for implementation in VERSIONS.keys():
 
-        for item in VERSIONS.get(version):
+        for item in VERSIONS.get(implementation):
 
-            implementation_name = item.get("implementation")
-            if implementation_name not in implementations:
-                implementations.append(implementation_name)
+            version = item.get("version")
+            if version not in versions:
+                versions.append(version)
 
     # sort list alphabetically
-    implementations.sort()
+    versions.sort()
 
-    return implementations
+    return versions
 
-def get_version_implementation(version: str, implementation: str) -> dict:
-    version = VERSIONS.get(version)
 
-    for item in version:
+def get_implementation_version(implementation: str, version: str) -> dict:
+    implementation = VERSIONS.get(implementation)
 
-        impl = item.get("implementation")
+    for item in implementation:
 
-        if impl == implementation:
+        ver = item.get("version")
+
+        if ver == version:
             return item
 
     return None
+
 
 DEFAULT_NAME = "hyperledger/aries-cloudagent"
 
@@ -79,18 +81,18 @@ parser.add_argument("--platform", help="build for a specific platform")
 parser.add_argument("--squash", action="store_true", help="produce a smaller image")
 parser.add_argument("--test", action="store_true", help="perform tests on docker image")
 parser.add_argument(
-    "version", choices=VERSIONS.keys(), help="the release version"
+    "version", choices=list_versions(), help="the release version"
 )
 parser.add_argument(
-    "implementation", choices=list_implementation_languages(), help="the agent implementation language"
+    "implementation", choices=VERSIONS.keys(), help="the agent implementation language"
 )
 
 
 args = parser.parse_args()
-ver = get_version_implementation(args.version, args.implementation)
+ver = get_implementation_version(args.implementation, args.version)
 base_image = ver.get("args").get("base_image")
 
-target = os.path.join(args.version, args.implementation)
+target = args.implementation
 dockerfile = os.path.join(target, "Dockerfile")
 if args.file:
     dockerfile = args.file

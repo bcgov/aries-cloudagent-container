@@ -4,12 +4,28 @@
 
 The image repository is located [on Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/).
 
-The images include:
+The images include language-specific implementations of Aries Cloudagent such as:
 
 -   [Aries CloudAgent Python (ACA-Py)](https://github.com/hyperledger/aries-cloudagent-python)
--   [Hyperledger Indy SDK](https://github.com/hyperledger/indy-sdk) and Indy CLI
--   [Hyperledger Indy Node](https://github.com/hyperledger/indy-node)
--   [Python](https://www.python.org/)
+
+# Repository structure
+
+The repository is structured so that there is a folder for each implementation/language , and this contains the dockerfiles and resources required to build and test the output image.
+
+Inside [make_image.py] a data structure called `VERSIONS` describes the versions and base image for each implementation/language.
+
+## Adding a new implementation/language
+
+To add a new implementation/language:
+
+1. create a new folder named after the new implementation in the root of the repository. For reference, the [python] folder can be copied and its contents updated to reflect the new implementation/language.
+2. Update the `VERSIONS` object in [make_image.py] to add the new implementation/language details.
+
+## Image versioning
+
+All the `aries-cloudagent` images will reside on the [Aries Cloud Agent Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/), and will differentiate between each other by using specific tags.
+
+By default, the tag for a new image will be composed by `$base_image_tag`, followed by `_$agent_version`. Because of this naming convention, please make sure you use a tagged version for each base image rather than using `latest` or a more generic tag that is not as descriptive.
 
 # Building the image locally
 
@@ -22,7 +38,8 @@ To build the image locally you will need to install:
 
 ## Running the build
 
-To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0`. This will build the image using version aries-cloudagent version 0.3.0.
+To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py python 0.3.0`.
+This will build the python version of the image, and include aries-cloudagent version 0.3.0.
 
 Many parameters can be specified through command-line, for more information please type `python make_image.py` to display the command's usage page.
 

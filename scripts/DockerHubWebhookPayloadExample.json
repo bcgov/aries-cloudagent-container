@@ -5,21 +5,21 @@
         "tag": "py36-1.8-2",
         "pusher": "esune"
     },
-    "callback_url": "https://registry.hub.docker.com/u/hyperledger/aries-cloudagent-container/hook/2gfg43e14cc3g4fbad5d0i5bd1hj2cc52/",
+    "callback_url": "https://registry.hub.docker.com/u/bcgovimages/aries-cloudagent/hook/2gfg43e14cc3g4fbad5d0i5bd1hj2cc52/",
     "repository": {
         "status": "Active",
         "description": "Standard docker images for building Hyperledger Aries Cloud Agent",
         "is_trusted": false,
-        "full_description": "## Docker images for Hyperledger Aries Cloud Agent.\n\nnSource Dockerfiles are located on GitHub at hyperledger/aries-cloudagent-container.\n",
-        "repo_url": "https://hub.docker.com/r/hyperledger/aries-cloudagent-container",
-        "owner": "hyperledger",
+        "full_description": "## Docker images for Hyperledger Aries Cloud Agent.\n\nnSource Dockerfiles are located on GitHub at hyperledger/aries-cloudagent.\n",
+        "repo_url": "https://hub.docker.com/r/bcgovimages/aries-cloudagent",
+        "owner": "bcgovimages",
         "is_official": false,
         "is_private": false,
-        "name": "aries-cloudagent-container",
-        "namespace": "hyperledger",
+        "name": "aries-cloudagent",
+        "namespace": "bcgovimages",
         "star_count": 2,
         "comment_count": 0,
         "date_created": 1526327904,
-        "repo_name": "hyperledger/aries-cloudagent-container"
+        "repo_name": "bcgovimages/aries-cloudagent"
     }
 }

@@ -2,7 +2,7 @@
 
 # Docker images for Hyperledger Aries Cloud Agent
 
-The image repository is located [on Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/).
+The image repository is located [on Docker Hub](https://hub.docker.com/r/bcgovimages/aries-cloudagent/).
 
 The images include language-specific implementations of Aries Cloudagent such as:
 
@@ -23,7 +23,7 @@ To add a new implementation/language:
 
 ## Image versioning
 
-All the `aries-cloudagent` images will reside on the [Aries Cloud Agent Docker Hub](https://hub.docker.com/r/hyperledger/aries-cloudagent/), and will differentiate between each other by using specific tags.
+All the `aries-cloudagent` images will reside on the [Aries Cloud Agent Docker Hub](https://hub.docker.com/r/bcgovimages/aries-cloudagent/), and will differentiate between each other by using specific tags.
 
 By default, the tag for a new image will be composed by `$base_image_tag`, followed by `_$agent_version`. Because of this naming convention, please make sure you use a tagged version for each base image rather than using `latest` or a more generic tag that is not as descriptive.
 

@@ -27,9 +27,9 @@ All the `aries-cloudagent` images will reside on the [Aries Cloud Agent Docker H
 
 By default, the tag for a new image will be composed by `$base_image_tag`, followed by `_$agent_version`. Because of this naming convention, please make sure you use a tagged version for each base image rather than using `latest` or a more generic tag that is not as descriptive.
 
-| Image tag         | indy-sdk                    | python | aries-cloudagent |
-| ----------------- | --------------------------- | ------ | ---------------- |
-| py36-1.11-0_0.3.0 | 1.11.0 with postgres plugin | 3.6    | 0.3.0            |
+| Image tag         | Implementation | Base image            | aries-cloudagent |
+| ----------------- | -------------- | --------------------- | ---------------- |
+| py36-1.11-0_0.3.0 | python         | von-image:py36-1.11-0 | 0.3.0            |
 
 # Building the image locally
 

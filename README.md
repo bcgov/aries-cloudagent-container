@@ -12,14 +12,14 @@ The images include language-specific implementations of Aries Cloudagent such as
 
 The repository is structured so that there is a folder for each implementation/language , and this contains the dockerfiles and resources required to build and test the output image.
 
-Inside [make_image.py] a data structure called `VERSIONS` describes the versions and base image for each implementation/language.
+Inside [make_image.py](make_image.py#L10) a data structure called `VERSIONS` describes the versions and base image for each implementation/language.
 
 # Adding a new implementation/language
 
 To add a new implementation/language:
 
-1. create a new folder named after the new implementation in the root of the repository. For reference, the [python] folder can be copied and its contents updated to reflect the new implementation/language.
-2. Update the `VERSIONS` object in [make_image.py] to add the new implementation/language details.
+1. create a new folder named after the new implementation in the root of the repository. For reference, the [python](python) folder can be copied and its contents updated to reflect the new implementation/language.
+2. Update the `VERSIONS` object in [make_image.py](make_image.py#L10) to add the new implementation/language details.
 
 ## Image versioning
 

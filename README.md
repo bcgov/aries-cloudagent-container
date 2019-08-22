@@ -30,6 +30,7 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 | Image tag         | Implementation | Base image            | aries-cloudagent |
 | ----------------- | -------------- | --------------------- | ---------------- |
 | py36-1.11-0_0.3.0 | python         | von-image:py36-1.11-0 | 0.3.0            |
+| py36-1.11-0_0.3.1 | python         | von-image:py36-1.11-0 | 0.3.1            |
 
 # Building the image locally
 

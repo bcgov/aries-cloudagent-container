@@ -32,6 +32,10 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 | py36-1.11-0_0.3.0 | python         | von-image:py36-1.11-0 | 0.3.0            |
 | py36-1.11-0_0.3.1 | python         | von-image:py36-1.11-0 | 0.3.1            |
 | py36-1.11-1_0.3.2 | python         | von-image:py36-1.11-1 | 0.3.2            |
+| py36-1.11-1_0.3.3 | python         | von-image:py36-1.11-1 | 0.3.3            |
+| py36-1.11-1_0.3.4 | python         | von-image:py36-1.11-1 | 0.3.4            |
+| py36-1.11-1_0.3.5 | python         | von-image:py36-1.11-1 | 0.3.5            |
+| py36-1.11-1_0.4.0 | python         | von-image:py36-1.11-1 | 0.4.0            |
 
 # Building the image locally
 

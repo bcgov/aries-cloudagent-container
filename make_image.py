@@ -68,6 +68,12 @@ VERSIONS = {
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.14-1"
             },
+        },
+        {
+            "version": "0.4.4",
+            "args": {
+                "base_image": "bcgovimages/von-image:py36-1.14-1"
+            },
         }
     ],
 }

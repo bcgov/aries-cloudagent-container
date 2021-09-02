@@ -51,6 +51,7 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 | py36-1.15-0_0.5.6 | python         | von-image:py36-1.15-0 | 0.5.6            |
 | py36-1.15-1_0.6.0 | python         | von-image:py36-1.15-1 | 0.6.0            |
 | py36-1.16-1_0.7.0 | python         | von-image:py36-1.16-1 | 0.7.0            |
+| py36-1.16-1_0.7.1 | python         | von-image:py36-1.16-1 | 0.7.1            |
 
 # Building the image locally
 
@@ -63,10 +64,14 @@ To build the image locally you will need to install:
 
 ## Running the build
 
-To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py python 0.3.0`.
+To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0 python`.
 This will build the python version of the image, and include aries-cloudagent version 0.3.0.
 
 Many parameters can be specified through command-line, for more information please type `python make_image.py` to display the command's usage page.
+
+Once the local build has been completed, those with permission can push the locally created docker image to [Docker Hub](https://hub.docker.com)
+in the bcgovimages organization. To do so, run `docker push bcgovimages/aries-cloudagent:py36-1.16-1_0.7.1`, where the name of the image
+is displayed from the `make_image.py` run.
 
 # Credits
 

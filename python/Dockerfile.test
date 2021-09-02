@@ -1,4 +1,7 @@
 ARG base_image
 FROM $base_image
+# There must be a better way to make the test/validate.sh script executable...
+USER root
 COPY test test
+RUN chmod ug+x test/validate.sh
 ENTRYPOINT ["/bin/bash", "-c", "test/validate.sh"]

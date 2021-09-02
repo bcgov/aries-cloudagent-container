@@ -59,19 +59,30 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 
 To build the image locally you will need to install:
 
--   [Python 3](https://www.python.org/)
--   [Docker](https://www.docker.com/)
+- [Python 3](https://www.python.org/)
+- [Docker](https://www.docker.com/)
 
 ## Running the build
 
-To build the image, open a terminal session at the root of this Git repo and execute: `python make_image.py 0.3.0 python`.
-This will build the python version of the image, and include aries-cloudagent version 0.3.0.
+To build the image, open a terminal session at the root of this git repo and execute: `python make_image.py 0.3.0 python`,
+replacing `0.3.0` with the aries-cloudagent version you need.
 
-Many parameters can be specified through command-line, for more information please type `python make_image.py` to display the command's usage page.
+Additional parameters can be specified through command-line, for more information please type `python make_image.py --help` to display the command's usage page.
 
-Once the local build has been completed, those with permission can push the locally created docker image to [Docker Hub](https://hub.docker.com)
-in the bcgovimages organization. To do so, run `docker push bcgovimages/aries-cloudagent:py36-1.16-1_0.7.1`, where the name of the image
-is displayed from the `make_image.py` run.
+## Adding and Publishing a New Image
+
+To add a new version of aries-cloudagent to this repo, create a PR with the following changes:
+
+- Decide on the base image to be used for the image, and the version of Aries Cloud Agent.
+  - The image tag of the output will be a concatenation of the two, as indicated in the table above.
+- Update the table in this readme to add the new version.
+- Edit the [make_image.py](make_image.py) file in this repo to add the new version.
+- Create and test the build of the local image using the options `--no-cache` and `--test`
+- If successful, push the image to the bcgovimages organization of Docker Hub (see below)
+
+Once the local build has been completed and verified, those with permission can push the locally created docker image to [Docker Hub](https://hub.docker.com)
+in the bcgovimages organization. To do so, run `docker push bcgovimages/aries-cloudagent:py36-1.16-1_0.7.1`, where the name of the image ("bcgovimag...")
+is taken from the `make_image.py` run output. The `--push` option on the `make_image.py` script can also be used to push the image after generation.
 
 # Credits
 

@@ -6,6 +6,7 @@ ARG agent_version
 ARG agent_implementation
 ARG tag_name=aries-cloudagent
 ARG tag_version=
+ARG acapy_reqs
 
 ENV SUMMARY="aries-cloudagent image" \
     DESCRIPTION="aries-cloudagent provides a base image for running Hyperledger Aries agents in Docker. \
@@ -20,6 +21,6 @@ LABEL summary="$SUMMARY" \
     version="$tag_version" \
     maintainer=""
 
-RUN pip install --no-cache-dir aries-cloudagent==${agent_version}
+RUN pip install --no-cache-dir aries-cloudagent${acapy_reqs}==${agent_version}
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

@@ -132,13 +132,15 @@ VERSIONS = {
         {
             "version": "0.7.0",
             "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1"
+                "base_image": "bcgovimages/von-image:py36-1.16-1",
+                "acapy_reqs": ""
             },
         },
         {
             "version": "0.7.1",
             "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1"
+                "base_image": "bcgovimages/von-image:py36-1.16-1",
+                "acapy_reqs": "[askar,bbs]"
             },
         }
     ]
@@ -178,7 +180,7 @@ def get_implementation_version(implementation: str, version: str) -> dict:
 DEFAULT_NAME = "bcgovimages/aries-cloudagent"
 
 
-parser = argparse.ArgumentParser(description="Generate the aries-cloudagent Docker image")
+parser = argparse.ArgumentParser(description="Generate an aries-cloudagent Docker image")
 parser.add_argument(
     "-n", "--name", default=DEFAULT_NAME, help="the base name for the docker image"
 )
@@ -199,13 +201,13 @@ parser.add_argument(
     help="output an updated Dockerfile with the build arguments replaced",
 )
 parser.add_argument("--python", help="use a specific python version")
-parser.add_argument("--push", action="store_true", help="push the resulting image")
+parser.add_argument("--push", action="store_true", help="implies the --test option; push the resulting image to Docker Hub, defaulting to the bcgovimages organization")
 parser.add_argument(
     "-q", "--quiet", action="store_true", help="suppress output from docker build"
 )
 parser.add_argument("--platform", help="build for a specific platform")
-parser.add_argument("--squash", action="store_true", help="produce a smaller image")
-parser.add_argument("--test", action="store_true", help="perform tests on docker image")
+# parser.add_argument("--squash", action="store_true", help="produce a smaller image")
+parser.add_argument("--test", action="store_true", help="build test image and perform tests defined in python/test/validate.sh on docker image")
 parser.add_argument(
     "version", choices=list_versions(), help="the release version"
 )
@@ -268,8 +270,8 @@ if dockerfile:
     cmd_args.extend(["-f", dockerfile])
 if args.no_cache:
     cmd_args.append("--no-cache")
-if args.squash:
-    cmd_args.append("--squash")
+# if args.squash:
+#     cmd_args.append("--squash")
 cmd_args.extend(["-t", tag])
 if args.platform:
     cmd_args.extend(["--platform", args.platform])

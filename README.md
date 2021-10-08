@@ -52,6 +52,7 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 | py36-1.15-1_0.6.0 | python         | von-image:py36-1.15-1 | 0.6.0            |
 | py36-1.16-1_0.7.0 | python         | von-image:py36-1.16-1 | 0.7.0            |
 | py36-1.16-1_0.7.1 | python         | von-image:py36-1.16-1 | 0.7.1            |
+| py36-1.16-1_0.7.1 | python         | von-image:py36-1.16-1 | 0.7.2-rc0        |
 
 # Building the image locally
 
@@ -78,11 +79,11 @@ To add a new version of aries-cloudagent to this repo, create a PR with the foll
 - Update the table in this readme to add the new version.
 - Edit the [make_image.py](make_image.py) file in this repo to add the new version.
 - Create and test the build of the local image using the options `--no-cache` and `--test`
-- If successful, push the image to the bcgovimages organization of Docker Hub (see below)
-
-Once the local build has been completed and verified, those with permission can push the locally created docker image to [Docker Hub](https://hub.docker.com)
-in the bcgovimages organization. To do so, run `docker push bcgovimages/aries-cloudagent:py36-1.16-1_0.7.1`, where the name of the image ("bcgovimag...")
-is taken from the `make_image.py` run output. The `--push` option on the `make_image.py` script can also be used to push the image after generation.
+  - `python make_image.py 0.7.2-rc0 --no-cache --test python`
+- If successful, push the image to the bcgovimages organization of Docker Hub using the `--push` option
+  - `python make_image.py 0.7.2-rc0 --push python`
+- If successful, verify the publishing of the image by checking [Docker Hub](https://hub.docker.com/r/bcgovimages/aries-cloudagent/tags)
+  - Note that it make take a few minutes for the new tag to appear. Hit refresh periodically until the image is visible.
 
 # Credits
 

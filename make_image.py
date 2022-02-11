@@ -271,7 +271,7 @@ build_args["agent_implementation"] = args.implementation
 build_args["base_image"] = base_image
 if args.build_arg:
     for arg in args.build_arg:
-        key, val = arg.split("=", 2)
+        key, val = arg.split("=", 1)
         build_args[key] = val
 
 if args.output:

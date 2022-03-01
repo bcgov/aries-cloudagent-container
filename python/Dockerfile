@@ -22,6 +22,16 @@ LABEL summary="$SUMMARY" \
     version="$tag_version" \
     maintainer=""
 
+USER root
+# Create default aca-py home (ACAPY_HOME) directory and set permissions.
+# This is used by indy-vdr
+RUN mkdir -p $HOME/.aries_cloudagent
+
+# The root group needs access the directories under $HOME/.aries_cloudagent for the container to function in OpenShift.
+RUN chown -R indy:root $HOME/.aries_cloudagent && \
+    chmod -R ug+rw $HOME/.aries_cloudagent
+USER indy
+
 RUN pip install --no-cache-dir ${git_egg_ref}aries-cloudagent${acapy_reqs}==${agent_version}
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

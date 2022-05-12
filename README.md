@@ -57,6 +57,8 @@ By default, the tag for a new image will be composed by `$base_image_tag`, follo
 | py36-1.16-1_0.7.3-rc0 | python     | von-image:py36-1.16-1 | 0.7.3-rc0        |
 | py36-1.16-1_0.7.3 | python         | von-image:py36-1.16-1 | 0.7.3            |
 | py36-1.16-1_0.7.4-rc0 | python     | von-image:py36-1.16-1 | 0.7.4-rc0        |
+| py36-1.16-1_0.7.4-rc1 | python     | von-image:py36-1.16-1 | 0.7.4-rc1        |
+| py36-1.16-1_0.7.4-rc2 | python     | von-image:py36-1.16-1 | 0.7.4-rc2        |
 
 # Building the image locally
 
@@ -65,7 +67,8 @@ This project is setup to use **Visual Studio Code Remote - Containers**.  The de
 ## Pre-requisites
 
 Using the devContainer:
-- Visual Studio Code with the Remote - Containers extention installed.
+
+- Visual Studio Code with the Remote - Containers extension installed.
 - [Docker](https://www.docker.com/)
 
 To develop and build the image locally you will need to install:

@@ -199,6 +199,13 @@ VERSIONS = {
                 "acapy_reqs": "[askar,bbs]"
             },
         },
+        {
+            "version": "0.7.4-rc4",
+            "args": {
+                "base_image": "bcgovimages/von-image:py36-1.16-1",
+                "acapy_reqs": "[askar,bbs]"
+            },
+        },
     ]
 }
 

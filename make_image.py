@@ -144,21 +144,7 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.7.2-rc0",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
             "version": "0.7.2",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.3-rc0",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",
                 "acapy_reqs": "[askar,bbs]"
@@ -172,42 +158,7 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.7.4-rc0",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.4-rc1",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.4-rc2",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.4-rc3",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.4-rc4",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.4-rc5",
+            "version": "0.7.4",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",
                 "acapy_reqs": "[askar,bbs]"

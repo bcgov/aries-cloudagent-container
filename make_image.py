@@ -165,14 +165,7 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.7.5-rc0",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "0.7.5-rc1",
+            "version": "0.7.5",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",
                 "acapy_reqs": "[askar,bbs]"

@@ -186,7 +186,7 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.8.2-rc2",
+            "version": "0.8.2",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",
                 "acapy_reqs": "[askar,bbs]"

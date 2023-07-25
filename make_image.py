@@ -193,6 +193,13 @@ VERSIONS = {
             },
         },
         {
+            "version": "0.9.0-rc0",
+            "dockerfile": "Dockerfile.mirror",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.9.0-rc0"
+            },
+        },
+        {
             "version": "1.0.0-rc0",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",
@@ -215,7 +222,6 @@ VERSIONS = {
         }
     ]
 }
-
 
 def list_versions():
     versions = []
@@ -291,7 +297,7 @@ ver = get_implementation_version(args.implementation, args.version)
 base_image = ver.get("args").get("base_image")
 
 target = args.implementation
-dockerfile = os.path.join(target, "Dockerfile")
+dockerfile = os.path.join(target, ver.get("dockerfile") or "Dockerfile")
 if args.file:
     dockerfile = args.file
 
@@ -301,7 +307,8 @@ if tag:
     tag_name, tag_version = tag.split(":", 2)
 else:
     base_name, base_version = base_image.split(":", 1)
-    tag_version = base_version + "_" + args.version
+    # When using an ACA-Py generated, version specific base image, remove the version from its tag when creating the new tag
+    tag_version = base_version.replace("-"+args.version, "") + "_" + args.version
     tag = tag_name + ":" + tag_version
 
 build_args = {}

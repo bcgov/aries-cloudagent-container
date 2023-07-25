@@ -26,42 +26,21 @@ To add a new implementation/language:
 
 All the `aries-cloudagent` images will reside on the [Aries Cloud Agent Docker Hub](https://hub.docker.com/r/bcgovimages/aries-cloudagent/), and will differentiate between each other by using specific tags.
 
-By default, the tag for a new image will be composed by `$base_image_tag`, followed by `_$agent_version`. Because of this naming convention, please make sure you use a tagged version for each base image rather than using `latest` or a more generic tag that is not as descriptive.
+By default, the tag for a new image will be composed by `$base_image` (minus `-$version`, if present), followed by `_$version`, where both values are from the `VERSIONS` JSON structure in [make_image.py](make_image.py#L10). For example:
 
-| Image tag         | Implementation | Base image            | aries-cloudagent |
-| ----------------- | -------------- | --------------------- | ---------------- |
-| py36-1.11-0_0.3.0 | python         | von-image:py36-1.11-0 | 0.3.0            |
-| py36-1.11-0_0.3.1 | python         | von-image:py36-1.11-0 | 0.3.1            |
-| py36-1.11-1_0.3.2 | python         | von-image:py36-1.11-1 | 0.3.2            |
-| py36-1.11-1_0.3.3 | python         | von-image:py36-1.11-1 | 0.3.3            |
-| py36-1.11-1_0.3.4 | python         | von-image:py36-1.11-1 | 0.3.4            |
-| py36-1.11-1_0.3.5 | python         | von-image:py36-1.11-1 | 0.3.5            |
-| py36-1.11-1_0.4.0 | python         | von-image:py36-1.11-1 | 0.4.0            |
-| py36-1.11-1_0.4.1 | python         | von-image:py36-1.11-1 | 0.4.1            |
-| py36-1.14-0_0.4.2 | python         | von-image:py36-1.14-0 | 0.4.2            |
-| py36-1.14-1_0.4.3 | python         | von-image:py36-1.14-1 | 0.4.3            |
-| py36-1.14-1_0.4.4 | python         | von-image:py36-1.14-1 | 0.4.4            |
-| py36-1.14-1_0.4.5 | python         | von-image:py36-1.14-1 | 0.4.5            |
-| py36-1.14-1_0.5.0 | python         | von-image:py36-1.14-1 | 0.5.0            |
-| py36-1.14-1_0.5.1 | python         | von-image:py36-1.14-1 | 0.5.1            |
-| py36-1.15-0_0.5.2 | python         | von-image:py36-1.15-0 | 0.5.2            |
-| py36-1.15-0_0.5.3 | python         | von-image:py36-1.15-0 | 0.5.3            |
-| py36-1.15-0_0.5.4 | python         | von-image:py36-1.15-0 | 0.5.4            |
-| py36-1.15-0_0.5.5 | python         | von-image:py36-1.15-0 | 0.5.5            |
-| py36-1.15-0_0.5.6 | python         | von-image:py36-1.15-0 | 0.5.6            |
-| py36-1.15-1_0.6.0 | python         | von-image:py36-1.15-1 | 0.6.0            |
-| py36-1.16-1_0.7.0 | python         | von-image:py36-1.16-1 | 0.7.0            |
-| py36-1.16-1_0.7.1 | python         | von-image:py36-1.16-1 | 0.7.1            |
-| py36-1.16-1_0.7.2 | python         | von-image:py36-1.16-1 | 0.7.2            |
-| py36-1.16-1_0.7.3 | python         | von-image:py36-1.16-1 | 0.7.3            |
-| py36-1.16-1_0.7.4 | python         | von-image:py36-1.16-1 | 0.7.4            |
-| py36-1.16-1_0.7.5 | python         | von-image:py36-1.16-1 | 0.7.5            |
-| py36-1.16-1_0.8.0 | python         | von-image:py36-1.16-1 | 0.8.0            |
-| py36-1.16-1_0.8.1 | python         | von-image:py36-1.16-1 | 0.8.1            |
-| py36-1.16-1_0.8.2 | python         | von-image:py36-1.16-1 | 0.8.2            |
-| py36-1.16-1_1.0.0-rc0 | python     | von-image:py36-1.16-1 | 1.0.0-rc0        |
-| py36-1.16-1_1.0.0-rc1 | python     | von-image:py36-1.16-1 | 1.0.0-rc1        |
-| py36-1.16-1_1.0.0-rc2 | python     | von-image:py36-1.16-1 | 1.0.0-rc2        |
+- `$base_image`: `py3.9-indy-1.16.0-0.9.0-rc0`
+- `$version`: `0.9.0-rc0`
+- Tag: `py3.9-indy-1.16.0_0.9.0-rc0`
+
+Because of this naming convention, please make sure you use a tagged version for each base image rather than using `latest` or a more generic tag that is not as descriptive.
+
+Up until release 0.9.0 (and 1.0.0-rc3), the base image came from `von-images`
+and used Python 3.6. After those versions, the base image comes from the
+released container image from ACA-Py CI/CD publication process that pushes to
+Hyperledger's [GitHub Container Repository](ghcr.io) based on Python 3.9. As
+such, the bcgovimages images are now just republications of the same images that
+are published from the ACA-Py CI/CD pipeline. We are retaining them because
+of the large user base still using pulling ACA-Py from the bcgovimages repository.
 
 # Building the image locally
 

@@ -194,9 +194,9 @@ VERSIONS = {
         },
         {
             "version": "0.9.0-rc0",
+            "dockerfile": "Dockerfile.mirror",
             "args": {
-                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.9.0-rc0",
-                "acapy_reqs": "[askar,bbs]"
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.9.0-rc0"
             },
         },
         {
@@ -297,7 +297,7 @@ ver = get_implementation_version(args.implementation, args.version)
 base_image = ver.get("args").get("base_image")
 
 target = args.implementation
-dockerfile = os.path.join(target, "Dockerfile")
+dockerfile = os.path.join(target, ver.get("dockerfile") or "Dockerfile")
 if args.file:
     dockerfile = args.file
 

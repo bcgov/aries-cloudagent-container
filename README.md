@@ -83,9 +83,8 @@ Example:
 
 To add a new version of aries-cloudagent to this repo, create a PR with the following changes:
 
-- Decide on the base image to be used for the image, and the version of Aries Cloud Agent.
-  - The image tag of the output will be a concatenation of the two, as indicated in the table above.
-- Update the table in this readme to add the new version.
+- Decide on the base image to be used for the image, and the version of Aries Cloud Agent Python.
+  - The image tag of the output will be a concatenation of the two, as [described above](#image-versioning).
 - Edit the [make_image.py](make_image.py) file in this repo to add the new version.
 - Create and test the build of the local image using the options `--no-cache` and `--test`
   - `python make_image.py 0.7.2-rc0 --no-cache --test python`

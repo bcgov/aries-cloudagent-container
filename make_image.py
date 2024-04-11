@@ -235,24 +235,10 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.12.0rc2",
+            "version": "0.12.0",
             "dockerfile": "Dockerfile.mirror",
             "args": {
-                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.12.0rc2"
-            },
-        },
-        {
-            "version": "1.0.0-rc0",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
-            },
-        },
-        {
-            "version": "1.0.0-rc1",
-            "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
-                "acapy_reqs": "[askar,bbs]"
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.12.0"
             },
         },
         {

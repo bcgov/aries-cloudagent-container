@@ -242,6 +242,13 @@ VERSIONS = {
             },
         },
         {
+            "version": "0.12.1rc0",
+            "dockerfile": "Dockerfile.mirror",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.12.1rc0"
+            },
+        },
+        {
             "version": "1.0.0-rc2",
             "args": {
                 "base_image": "bcgovimages/von-image:py36-1.16-1",

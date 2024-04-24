@@ -87,9 +87,9 @@ To add a new version of aries-cloudagent to this repo, create a PR with the foll
   - The image tag of the output will be a concatenation of the two, as [described above](#image-versioning).
 - Edit the [make_image.py](make_image.py) file in this repo to add the new version.
 - Create and test the build of the local image using the options `--no-cache` and `--test`
-  - `python make_image.py 0.12.0 --no-cache --test python`
+  - `python make_image.py 0.12.1rc0 --no-cache --test python`
 - If successful, push the image to the bcgovimages organization of Docker Hub using the `--push` option
-  - `python make_image.py 0.12.0 --push python`
+  - `python make_image.py 0.12.1rc0 --push python`
 - If successful, verify the publishing of the image by checking [Docker Hub](https://hub.docker.com/r/bcgovimages/aries-cloudagent/tags)
   - Note that it make take a few minutes for the new tag to appear. Hit refresh periodically until the image is visible.
 

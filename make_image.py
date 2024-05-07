@@ -235,6 +235,13 @@ VERSIONS = {
             },
         },
         {
+            "version": "0.11.1",
+            "dockerfile": "Dockerfile.mirror",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.11.1"
+            },
+        },
+        {
             "version": "0.12.0",
             "dockerfile": "Dockerfile.mirror",
             "args": {

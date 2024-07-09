@@ -256,9 +256,9 @@ VERSIONS = {
             },
         },
         {
-            "version": "1.0.0-rc2",
+            "version": "1.0.0rc4",
             "args": {
-                "base_image": "bcgovimages/von-image:py36-1.16-1",
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.0rc4",
                 "acapy_reqs": "[askar,bbs]"
             },
         }

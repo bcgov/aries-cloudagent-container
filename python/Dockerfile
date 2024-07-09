@@ -2,6 +2,8 @@ ARG base_image
 
 FROM ${base_image}
 
+ARG uid=1001
+ARG user=aries
 ARG agent_version
 ARG agent_implementation
 ARG tag_name=aries-cloudagent
@@ -28,9 +30,9 @@ USER root
 RUN mkdir -p $HOME/.aries_cloudagent
 
 # The root group needs access the directories under $HOME/.aries_cloudagent for the container to function in OpenShift.
-RUN chown -R indy:root $HOME/.aries_cloudagent && \
+RUN chown -R ${user}:root $HOME/.aries_cloudagent && \
     chmod -R ug+rw $HOME/.aries_cloudagent
-USER indy
+USER ${user}
 
 RUN pip install --no-cache-dir ${git_egg_ref}aries-cloudagent${acapy_reqs}==${agent_version}
 

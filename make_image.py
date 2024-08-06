@@ -249,6 +249,13 @@ VERSIONS = {
             },
         },
         {
+            "version": "0.11.3",
+            "dockerfile": "Dockerfile.mirror",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.11.3"
+            },
+        },
+        {
             "version": "0.12.0",
             "dockerfile": "Dockerfile.mirror",
             "args": {
@@ -263,16 +270,16 @@ VERSIONS = {
             },
         },
         {
-            "version": "0.12.2rc1",
+            "version": "0.12.2",
             "dockerfile": "Dockerfile.mirror",
             "args": {
-                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.12.2rc1"
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.9-indy-1.16.0-0.12.2"
             },
         },
         {
-            "version": "1.0.0rc5",
+            "version": "1.0.0rc6",
             "args": {
-                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.0rc5",
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.0rc6",
                 "acapy_reqs": "[askar,bbs]"
             },
         }

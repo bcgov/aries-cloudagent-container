@@ -282,6 +282,13 @@ VERSIONS = {
                 "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.0",
                 "acapy_reqs": "[askar,bbs]"
             },
+        },
+        {
+            "version": "1.0.1",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.1",
+                "acapy_reqs": "[askar,bbs]"
+            },
         }
     ]
 }

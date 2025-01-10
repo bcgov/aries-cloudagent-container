@@ -2,7 +2,7 @@
 
 cd $HOME
 
-if ! python -c "import aries_cloudagent"; then
-    echo "Importing aries-cloudagent module failed"
+if ! python -c "import acapy_agent"; then
+    echo "Importing acapy-agent module failed"
     exit 1
 fi

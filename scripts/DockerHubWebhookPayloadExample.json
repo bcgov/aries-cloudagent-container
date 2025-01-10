@@ -10,7 +10,7 @@
         "status": "Active",
         "description": "Standard docker images for building Hyperledger Aries Cloud Agent",
         "is_trusted": false,
-        "full_description": "## Docker images for Hyperledger Aries Cloud Agent.\n\nnSource Dockerfiles are located on GitHub at hyperledger/aries-cloudagent.\n",
+        "full_description": "## Docker images for the OpenWallet Foundation ACA-Py agent.\n\nnSource Dockerfiles are located on GitHub at openwallet-foundation/acapy-agent.\n",
         "repo_url": "https://hub.docker.com/r/bcgovimages/aries-cloudagent",
         "owner": "bcgovimages",
         "is_official": false,

@@ -34,6 +34,6 @@ RUN chown -R ${user}:root $HOME/.aries_cloudagent && \
     chmod -R ug+rw $HOME/.aries_cloudagent
 USER ${user}
 
-RUN pip install --no-cache-dir ${git_egg_ref}aries-cloudagent${acapy_reqs}==${agent_version}
+RUN pip install --no-cache-dir ${git_egg_ref}acapy-agent${acapy_reqs}==${agent_version}
 
 ENTRYPOINT ["/bin/bash", "-c", "aca-py \"$@\"", "--"]

@@ -282,6 +282,27 @@ VERSIONS = {
                 "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.0",
                 "acapy_reqs": "[askar,bbs]"
             },
+        },
+        {
+            "version": "1.0.1",
+            "args": {
+                "base_image": "ghcr.io/hyperledger/aries-cloudagent-python:py3.12-1.0.1",
+                "acapy_reqs": "[askar,bbs]"
+            },
+        },
+        {
+            "version": "1.1.0",
+            "args": {
+                "base_image": "ghcr.io/openwallet-foundation/acapy-agent:py3.12-1.1.0",
+                "acapy_reqs": "[askar,bbs]"
+            },
+        },
+        {
+            "version": "1.2.0",
+            "args": {
+                "base_image": "ghcr.io/openwallet-foundation/acapy-agent:py3.12-1.2.0",
+                "acapy_reqs": "[askar,bbs]"
+            },
         }
     ]
 }
@@ -319,7 +340,7 @@ def get_implementation_version(implementation: str, version: str) -> dict:
 DEFAULT_NAME = "bcgovimages/aries-cloudagent"
 
 
-parser = argparse.ArgumentParser(description="Generate an aries-cloudagent Docker image")
+parser = argparse.ArgumentParser(description="Generate an ACA-Py Docker image")
 parser.add_argument(
     "-n", "--name", default=DEFAULT_NAME, help="the base name for the docker image"
 )
